@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <title> Secret </title>
+</head>
+<body>
+    <div class="login" id="login">
+        <h2> Log in first </h2>
+        <label name="username"> Username </label>
+        <input name="username" title="username" type="text" id="username">
+        <label> Password </label>
+        <input name="password" type="password" title="password" id="password">
+        <button name="login"> log in </button>
+    </div>
+
+    <div class="loggedin" id="loggedIn">
+        <h2 id="userLoggedIn"> </h2>
+        <button name="logout" id="logout"> log out </button>
+    </div>
+
+    <div class="registration" id="registration">
+        <h2> If you do not have an account create here </h2>
+
+        <label name="register_email"> Email </label>
+        <input name="register_email" type="email" title="email" id="register_email">
+        
+        <label name="register_username"> Username </label>
+        <input name="register_username" id="register_username" type="text" title="Register a username">
+        
+        <label> Full Name </label>
+        <input name="fullName" id="fullName" type="text" title="full name">
+        
+        <label name="register_password"> Password </label>
+        <input name="register_password" type="password" id="register_password" title="password">
+
+        <label name="passwordConfirm" type="password"> Confirm Password </label>
+        <input name="passwordConfirm" type="password" id="passwordConfirm" title="password">
+        <button name="register"> register </button>
+
+    </div>
+
+    <form>
+        <h2> Type something here </h2>
+        <label name="form_post"> Speak your mind </label>
+        <input type="text" name="form_post" id="formPost" title="post">
+        <button type="submit" name="submit"> submit </button>
+        <br>
+    </form>
+    <div>
+        <span> Work in Progress </span>
+        <span> Designed and developed by <a href="https://github.com/itstashi"> tashi </a> >> </span>
+    </div>
+</body>
+    <script type="module" src="javascript/pb/pocketbase.js"></script>
+</html>
