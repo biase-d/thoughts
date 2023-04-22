@@ -74,11 +74,11 @@ async function registration(registrationCredentials){
 }
 
 async function createForm(){
-    let form = document.getElementById('formPost').value
+    const form = document.getElementById('formPost').value
 
     if (!(form === "")) {console.log(form)}
     
-    let data = {
+    const data = {
         "user": userModel.id,
         "form_reply": form,
     }
