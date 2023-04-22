@@ -1,11 +1,11 @@
 import PocketBase from "../pocketbase-js-sdk/pocketbase.es.mjs";
 
-/* for production */
+/* for production 
 const host = new PocketBase('https://petite-match.pockethost.io');
-
-/* for development
-const host = new PocketBase('http://127.0.0.1:8090')
 */
+
+/* for development */
+const host = new PocketBase('http://127.0.0.1:8090')
 
 const authStore = host.authStore
 const userModel = host.authStore.model
@@ -16,6 +16,7 @@ if (authStore.isValid){
     document.getElementById('registration').style.display = 'none'
     document.getElementById('loggedIn').style.display = 'flex'
     document.getElementById('userLoggedIn').innerHTML = `Hello, ${userModel.name}`
+    document.getElementById('previousEntries').style.display = 'block'
 }
 
 // User sign-in
@@ -94,9 +95,16 @@ if (authStore.isValid) {
     console.log(userModel.name.trim() + ' is logged in')
 }
 
-const forms = await host.collection('forms').getFullList(1, 50, {
+const forms = await host.collection('forms').getFullList({
+    sort: '-created',
 })
 
 forms.forEach(form => {
+    const newListItem = document.createElement('li', 'id="test"')
+    const ListItemContent = document.createTextNode(` ${form.form_reply} | ${form.id}, `);
+
+    newListItem.appendChild(ListItemContent)
+
+    document.getElementById('entries').insertBefore(newListItem, document.getElementById('insertBefore'))
     console.table(form)
 })

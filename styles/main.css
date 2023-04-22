@@ -46,6 +46,35 @@ form{
     max-width: 30rem;
     padding: 10px;
 }
+#previousEntries{
+    position: relative;
+    padding: 10px;
+    display: none;
+}
+#entries {
+    position: relative;
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+    place-items: center;
+    padding: 10px;
+    margin: 0;
+    max-width: 30rem;
+}
+#entries > li{
+    padding: 1rem;
+    gap: 0.5rem;
+    border: none;
+    width: 100%;
+    background: rgb(110, 113, 121);
+}
+#entries > li:hover{
+    background-color: rgb(244, 244, 244);
+    color: black;
+}
+#insertBefore{
+    display: none;
+}
 span{
     position: relative;
     text-align: center;
@@ -81,5 +110,10 @@ span > a{
     }
     span > a{
         color: rgb(244, 244, 244);
+    }
+    #entries{
+        display: grid;
+        max-width: inherit;
+        width: 30rem;
     }
 }
