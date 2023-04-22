@@ -84,6 +84,8 @@ async function createForm(){
     }
 
     await host.collection('forms').create(data)
+
+    window.location.reload();
 }
 
 // Verification and validation
