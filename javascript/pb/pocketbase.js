@@ -1,11 +1,12 @@
 import PocketBase from "../pocketbase-js-sdk/pocketbase.es.mjs";
 
-/* for production 
+/* for production */
 const host = new PocketBase('https://petite-match.pockethost.io');
-*/
 
-/* for development */
+
+/* for development 
 const host = new PocketBase('http://127.0.0.1:8090')
+*/
 
 const authStore = host.authStore
 const userModel = host.authStore.model
