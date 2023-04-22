@@ -101,7 +101,7 @@ const forms = await host.collection('forms').getFullList({
 })
 
 forms.forEach(form => {
-    const newListItem = document.createElement('li', 'id="test"')
+    const newListItem = document.createElement('li')
     const ListItemContent = document.createTextNode(` ${form.form_reply} | ${form.id}, `);
 
     newListItem.appendChild(ListItemContent)
