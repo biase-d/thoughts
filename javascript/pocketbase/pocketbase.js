@@ -1,12 +1,13 @@
-import PocketBase from "../pocketbase-js-sdk/pocketbase.es.mjs";
+export { PocketBase }
 
-/* for production */
+import PocketBase from "./pocketbase-js-sdk/pocketbase.es.mjs";
+
+/* for production 
 const host = new PocketBase('https://petite-match.pockethost.io');
-
-
-/* for development 
-const host = new PocketBase('http://127.0.0.1:8090')
 */
+
+/* for development */
+const host = new PocketBase('http://127.0.0.1:8090')
 
 const authStore = host.authStore
 const userModel = host.authStore.model
@@ -64,15 +65,17 @@ document.querySelector('button[name="submit"]').addEventListener("click", (event
 // Modules 
 
 async function authentication(username, password){
-    await host.collection('users').authWithPassword(username, password)
-
+    try {
+        await host.collection('users').authWithPassword(username, password)
+    } catch (error) {
+        console.error(error)
+    }
+    
     authStore.isValid ? console.log('successful login') : console.log('please try to login again')
-    location.reload()
 }
 
 async function registration(registrationCredentials){
     await host.collection('users').create(registrationCredentials)
-    location.reload();
 }
 
 async function createForm(){
@@ -103,9 +106,8 @@ const forms = await host.collection('forms').getFullList({
 forms.forEach(form => {
     const newListItem = document.createElement('li')
     const ListItemContent = document.createTextNode(` ${form.form_reply} | ${form.id}, `);
-
+    
     newListItem.appendChild(ListItemContent)
-
     document.getElementById('entries').insertBefore(newListItem, document.getElementById('insertBefore'))
     console.table(form)
 })
