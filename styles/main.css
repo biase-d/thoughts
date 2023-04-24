@@ -90,6 +90,34 @@ span:hover{
 span > a{
     color: rgb(244, 244, 244);
 }
+@media (prefers-color-scheme: light){
+    body{
+        background: white;
+        color: rgb(110, 113, 121);
+    }
+    button{
+        color: white;
+    }
+    input{
+        background-color: transparent;
+        color: rgb(100, 103, 101);
+        border: 1px solid rgb(69, 76, 90);
+    }
+    #entries > li {
+        border: 1px solid rgb(69, 76, 90);
+        background: transparent;
+    }
+    #entries > li:hover{
+        background: #ebebeb;
+    }
+    span{
+        color: rgb(100, 103, 101);
+    }
+    #tashi {
+        color: rgb(100, 103, 101);
+    }
+}
+
 @media screen and (min-width: 500px){
     body{
         display: flex;

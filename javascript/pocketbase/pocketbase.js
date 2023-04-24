@@ -1,13 +1,12 @@
-export { PocketBase }
-
 import PocketBase from "./pocketbase-js-sdk/pocketbase.es.mjs";
+export { host }
 
 /* for production 
 const host = new PocketBase('https://petite-match.pockethost.io');
 */
 
 /* for development */
-const host = new PocketBase('http://127.0.0.1:8090')
+const host = new PocketBase( 'http://127.0.0.1:8090' )
 
 const authStore = host.authStore
 const userModel = host.authStore.model
@@ -21,6 +20,7 @@ if (authStore.isValid){
     document.getElementById('previousEntries').style.display = 'block'
 }
 
+/*
 // User sign-in
 document.querySelector('button[name="login"]').addEventListener("click", (event) => {
     event.preventDefault()
@@ -32,16 +32,19 @@ document.querySelector('button[name="login"]').addEventListener("click", (event)
 
     authentication(userLoginCredentials.username, userLoginCredentials.password)
 })
+*/
 
+/*
 document.querySelector('button[name="logout"').addEventListener("click", (event) => {
     event.preventDefault()
 
     authStore.clear()
     location.reload()
 })
+*/
 
 // User Registration
-
+/*
 document.querySelector('button[name="register"]').addEventListener("click", (event) => {
     event.preventDefault()
     
@@ -55,6 +58,7 @@ document.querySelector('button[name="register"]').addEventListener("click", (eve
 
     registration(userRegistrationCredentials)
 })
+*/
 
 document.querySelector('button[name="submit"]').addEventListener("click", (event) => {
     event.preventDefault()

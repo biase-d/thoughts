@@ -1,14 +1,13 @@
-import { userSignIn, userRegistration, host } from "./auth.js"
-
+import { host } from "./pocketbase/pocketbase.js"
 export { createForm, updateForm }
 
-async function createForm(form, isValid){
+async function createForm(userID, form, isValid){
 
     if (!(form === "") && isValid) {
         console.log(form)
 
         const data = {
-            'user': host.authStore.model.id,
+            'user': userID,
             'form_question': "not yet implemented", 
             'form_reply': form
         }
