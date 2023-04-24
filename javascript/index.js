@@ -63,7 +63,6 @@ document.querySelector('button[name="submit"]').addEventListener("click", (event
 })
 
 // Verification and validation
-
 if (authStore.isValid) {
     console.log(user.name.trim() + ' is logged in')
 }
@@ -73,12 +72,12 @@ const forms = await host.collection('forms').getFullList({
 })
 
 forms.forEach(form => {
-    const newListItem = document.createElement('li')
-    const ListItemContent = document.createTextNode(` ${form.form_reply} | ${form.id}, `);
+    const newListItem = document.createElement( 'li' )
+    const ListItemContent = document.createTextNode( `${form.form_reply}` );
     
-    newListItem.appendChild(ListItemContent)
-    document.getElementById('entries').insertBefore(newListItem, document.getElementById('insertBefore'))
-    console.table(form)
+    newListItem.appendChild( ListItemContent )
+    document.getElementById('entries').insertBefore( newListItem, document.getElementById( 'insertBefore' ) )
+    console.table( form )
 })
 
 
