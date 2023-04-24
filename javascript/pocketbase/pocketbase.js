@@ -60,11 +60,13 @@ document.querySelector('button[name="register"]').addEventListener("click", (eve
 })
 */
 
+/*
 document.querySelector('button[name="submit"]').addEventListener("click", (event) => {
     event.preventDefault()
 
     createForm()
 })
+*/
 
 // Modules 
 

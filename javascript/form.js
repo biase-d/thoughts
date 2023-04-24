@@ -2,8 +2,8 @@ import { host } from "./pocketbase/pocketbase.js"
 export { createForm, updateForm }
 
 async function createForm(userID, form, isValid){
-
     if (!(form === "") && isValid) {
+        console.log( {userID}, {form}, {isValid} )
         console.log(form)
 
         const data = {
@@ -15,7 +15,7 @@ async function createForm(userID, form, isValid){
         await host.collection('forms').create(data)
 
     } else if (form === ""){
-        console.log(" Reply cannot be empty  ")
+        console.log( "Reply cannot be empty" )
 
     } else if (!isValid){
         console.log(' Please log in first ')

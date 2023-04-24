@@ -20,6 +20,17 @@ async function userSignIn( username, password ) {
     }
 }
 
+// Check aunthentication token 
+/*
+async function isValid(){
+    if (host.authStore.isValid != null){
+        return true
+    } else {
+        return false
+    }
+}
+*/
+
 function userSignOut(){
     host.authStore.clear()
     location.reload()
