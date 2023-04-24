@@ -10,7 +10,7 @@ if (authStore.isValid){
     document.getElementById('login').style.display = 'none';
     document.getElementById('registration').style.display = 'none'
     document.getElementById('loggedIn').style.display = 'flex'
-    document.getElementById('userLoggedIn').innerHTML = `Hello, ${userModel.name}`
+    document.getElementById('userLoggedIn').innerHTML = `Hello, ${user.name}`
     document.getElementById('previousEntries').style.display = 'block'
 }
 

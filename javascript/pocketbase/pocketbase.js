@@ -84,6 +84,7 @@ async function registration(registrationCredentials){
     await host.collection('users').create(registrationCredentials)
 }
 
+/*
 async function createForm(){
     const form = document.getElementById('formPost').value
 
@@ -98,7 +99,7 @@ async function createForm(){
 
     window.location.reload();
 }
-
+*/
 // Verification and validation
 
 if (authStore.isValid) {
