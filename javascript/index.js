@@ -65,7 +65,7 @@ document.querySelector('button[name="submit"]').addEventListener("click", (event
 // Verification and validation
 
 if (authStore.isValid) {
-    console.log(userModel.name.trim() + ' is logged in')
+    console.log(user.name.trim() + ' is logged in')
 }
 
 const forms = await host.collection('forms').getFullList({
