@@ -61,3 +61,25 @@ document.querySelector('button[name="submit"]').addEventListener("click", (event
     }
 
 })
+
+// Verification and validation
+
+if (authStore.isValid) {
+    console.log(userModel.name.trim() + ' is logged in')
+}
+
+const forms = await host.collection('forms').getFullList({
+    sort: '-created',
+})
+
+forms.forEach(form => {
+    const newListItem = document.createElement('li')
+    const ListItemContent = document.createTextNode(` ${form.form_reply} | ${form.id}, `);
+    
+    newListItem.appendChild(ListItemContent)
+    document.getElementById('entries').insertBefore(newListItem, document.getElementById('insertBefore'))
+    console.table(form)
+})
+
+
+// authStore.isValid ? console.log('successful login') : console.log('please try to login again')
