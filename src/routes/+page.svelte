@@ -14,7 +14,6 @@
     <p class="text-3xl mb-5"> Hi there </p>
     <p>Welcome to our serene platform, a tranquil space for capturing your thoughts. Embrace the calmness as you express yourself authentically. Let your thoughts flow freely in this sanctuary of reflection. Enjoy the stillness and find solace in the simplicity of jotting down your thoughts.</p>
 </section>
-
 <section class="p-5">
     <p class="text-3xl mb-5"> Get Started </p>
     <form
